@@ -1,0 +1,54 @@
+[merge]
+    tool = vimdiff
+[core]
+    autocrlf = false
+    ignorecase = true
+    safecrlf = true
+    symlinks = false
+    filemode = false
+[user]
+  name = Robert Fink
+  email = rfink@palantir.com
+[push]
+    default = tracking
+[alias]
+    ff = flow feature
+    ci = commit
+    st = status
+    co = checkout
+    br = branch --color -v
+    rb = rebase
+    rbi = rebase -i
+    rst = reset
+    ls = log --stat
+    pu = push
+    ad = add
+    staged = diff --cached --color
+    hlog=  log --date-order --branches=* --graph --format=\"%C(green)%h %Creset%C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset %s\"
+    hlog-all =  log --date-order --all --graph --format=\"%C(green)%h %Creset%C(yellow)%an%Creset %C(blue bold)%ar%Creset %C(red bold)%d%Creset %s\"
+    # One line log.
+    olog = log --oneline
+    d = diff --color-words
+    gitkconflict = !gitk --left-right HEAD...MERGE_HEAD
+    amend = commit --amend -C HEAD
+    recents = for-each-ref --sort=comitterdate --format='%(refname:short)' refs/heads
+    hist = log -p -M -C --find-copies-harder --follow
+  g = grep --break --heading --line-number
+    h = help
+[core]
+    pager = less -FrX --ignore-case
+  excludesfile = ~/.gitignore
+[color]
+    diff = auto
+    branch = auto
+    interactive = auto
+  ui = auto
+[gc]
+    auto = 0
+[branch]
+    # rebase your branch when using "git pull"
+  autosetuprebase = always
+[grep]
+  extendRegexp = true
+  lineNumber = true
+
